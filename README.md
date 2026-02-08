@@ -1,76 +1,57 @@
-# SupportSphere ![Build Status](https://img.shields.io/badge/build-passing-brightgreen) ![Version](https://img.shields.io/badge/version-1.0.0-blue)
+# SupportSphere Application Launch
 
-## Project Description
-SupportSphere is an intelligent customer support platform that leverages AI to analyze customer queries and prioritize support tickets in real-time. By integrating a dynamic knowledge base, it provides agents with contextual suggestions, enhancing response efficiency and customer satisfaction.
+## Getting Started
 
-## Features
-- 🤖 AI-driven customer query analysis
-- ⏱️ Real-time support ticket prioritization
-- 📚 Integrated knowledge base suggestions
+This document outlines the steps to launch the SupportSphere application and monitor for any immediate issues post-launch.
 
-## Tech Stack
-### Frontend
-- **Next.js** 🌐
+### Prerequisites
 
-### Backend
-- **Node.js** 🚀
-- **OpenAI Agent SDK** 🤖
+- Node.js installed
+- PostgreSQL database set up
+- Redis server running
+- Prisma set up and migrated
+- OpenAI Agent SDK installed
 
-### Database
-- **PostgreSQL** 🗄️
-- **Prisma** 🔗
+### Installation
 
-### Caching
-- **Redis** 🧊
+1. Clone the repository:
+   git clone <repository-url>
 
-## Installation
-To set up the project locally, follow these steps:
+2. Navigate to the project directory:
+   cd support-sphere
 
-- Clone the repository
-bash
-git clone https://github.com/arun-kumar-codes/supportsphere.git
-- Navigate to the project directory
-bash
-cd supportsphere
-- Install dependencies
-bash
-npm install
-- Set up the database
-bash
-npx prisma migrate dev
-- Start the development server
-bash
+3. Install dependencies:
+   npm install
+
+4. Set up environment variables in a `.env` file:
+   DATABASE_URL=postgresql://user:password@localhost:5432/supportsphere
+   REDIS_URL=redis://localhost:6379
+   OPENAI_API_KEY=your_openai_api_key
+
+### Launching the Application
+
+To launch the application, run the following command:
+
 npm run dev
-## Usage
-Once the server is running, you can access the application at `http://localhost:3000`. Follow the on-screen instructions to interact with the AI-driven support features.
 
-## API Documentation
-For detailed API documentation, please refer to the [API Docs](https://github.com/arun-kumar-codes/supportsphere/wiki/API-Documentation).
+### Monitoring
 
-## Testing
-To run the tests for this project, use the following command:
-bash
-npm test
-## Deployment
-To deploy the application, follow these steps:
+After launching, monitor the application for any issues. You can check the logs for errors:
 
-- Build the application
-bash
-npm run build
-- Start the production server
-bash
-npm start
-- Ensure your environment variables are set correctly for production.
+npm run logs
 
-## Contributing
-We welcome contributions! Please follow these guidelines:
+### Troubleshooting
 
-- Fork the repository
-- Create a new branch for your feature or bug fix
-- Commit your changes
-- Push to your branch
-- Open a pull request
+If you encounter any issues, check the following:
 
-For more details, please refer to our [Contributing Guidelines](https://github.com/arun-kumar-codes/supportsphere/blob/main/CONTRIBUTING.md). 
+- Ensure the PostgreSQL and Redis services are running.
+- Verify the database connection string in the `.env` file.
+- Check for any migration issues with Prisma.
 
-Thank you for your interest in SupportSphere! 🚀
+### Contributing
+
+If you would like to contribute, please fork the repository and submit a pull request.
+
+### License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
